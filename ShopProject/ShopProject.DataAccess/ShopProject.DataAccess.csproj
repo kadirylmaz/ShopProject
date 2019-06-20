@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Folder Include="Abstract\" />
+    <Folder Include="Concrete\EntityFramework\" />
   </ItemGroup>
 
 </Project>
