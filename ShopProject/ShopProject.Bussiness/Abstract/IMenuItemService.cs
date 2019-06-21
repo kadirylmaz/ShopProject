@@ -11,6 +11,8 @@ namespace ShopProject.Bussiness.Abstract
 
         MenuItem Get(int id);
 
+        void Remove(MenuItem menuItem);
+
         void Add(MenuItem menuItem);
 
         void Update(MenuItem menuItem);

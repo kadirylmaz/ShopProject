@@ -8,5 +8,6 @@ namespace ShopProject.DataAccess.Abstract
 {
     public interface IMenuItemDAL:IEntityRepository<MenuItem>
     {
+        void Remove(MenuItem menuItem);
     }
 }

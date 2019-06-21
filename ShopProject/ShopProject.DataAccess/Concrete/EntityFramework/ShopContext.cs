@@ -10,8 +10,8 @@ namespace ShopProject.DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Server=DESKTOP-4IMGOMO\KADIR; Database=ShopProjectDb; Integrated security=true;");
-            optionsBuilder.UseSqlServer(@"Server=.; Database=ShopProjectDb; Integrated security=true;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-4IMGOMO\KADIR; Database=ShopProjectDb; Integrated security=true;");
+            //optionsBuilder.UseSqlServer(@"Server=.; Database=ShopProjectDb; Integrated security=true;");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

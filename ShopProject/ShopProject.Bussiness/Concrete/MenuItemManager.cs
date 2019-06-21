@@ -36,6 +36,11 @@ namespace ShopProject.Bussiness.Concrete
             return _menuItemDAL.GetList();
         }
 
+        public void Remove(MenuItem menuItem)
+        {
+            _menuItemDAL.Remove(menuItem);
+        }
+
         public void Update(MenuItem menuItem)
         {
             _menuItemDAL.Update(menuItem);

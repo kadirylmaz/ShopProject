@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ShopProject.Bussiness.Abstract;
+using ShopProject.Entities.Concrete.Entities;
 
 namespace ShopProject.WebApi.Controllers
 {
@@ -10,11 +12,16 @@ namespace ShopProject.WebApi.Controllers
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        private IMenuItemService _menutItemService;
+        public ValuesController(IMenuItemService menuItemService)
+        {
+            _menutItemService = menuItemService;
+        }
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public List<MenuItem> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _menutItemService.GetList();
         }
 
         // GET api/values/5
