@@ -51,5 +51,8 @@ namespace ShopProject.WebApi.Controllers
             _menuItemService.Remove(model);
         }
 
+        public class MenuItem
+        {
+        }
     }
 }

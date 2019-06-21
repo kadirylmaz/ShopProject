@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using ShopProject.WebUI.Middlewares;
 
 namespace ShopProject.WebUI
 {
@@ -27,17 +28,8 @@ namespace ShopProject.WebUI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc(routes =>
-            {
-                routes.MapAreaRoute(
-                    name: "MyArea",
-                    areaName: "Admin",
-                    template: "Admin/{controller=Home}/{action=Index}/{id?}");
-            routes.MapRoute(
-                name: "default",
-                template: "{controller=Home}/{action=Index}/{id?}");
-                    
-            });
+            app.UseMvc();
+            app.CustomStaticFiles();
             app.UseStaticFiles();
         }
     }
