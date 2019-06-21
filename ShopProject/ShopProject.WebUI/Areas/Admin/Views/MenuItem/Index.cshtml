@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<ShopProject.WebUI.Areas.Admin.Models.MenuItem.MenuItemListModel>
+<div>
+    <a asp-controller="MenuItem" asp-action="Create" asp-area="Admin"  class="btn btn-primary">Create Menu</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    MenuName
+                </th>
+                <th>
+                    Controller Name
+                </th>
+                <th>
+                    Action Name
+                </th>
+                <th>
+                    Created Date
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var menu in Model)
+            {
+                <tr>
+                    <td>
+                        @menu.ID
+                    </td>
+                    <td>
+                        @menu.MenuName
+                    </td>
+                    <td>
+                        @menu.ControllerName
+                    </td>
+                    <td>
+                        @menu.ActionName
+                    </td>
+                    <td>
+                        @menu.CreatedDate
+                    </td>
+                    <td>
+                        <a asp-controller="MenuItem" asp-action="Detail" asp-area="Admin" class="btn btn-success" asp-route-ID="@menu.ID">Update</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

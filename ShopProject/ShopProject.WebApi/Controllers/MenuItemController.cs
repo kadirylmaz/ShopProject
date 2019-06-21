@@ -24,6 +24,7 @@ namespace ShopProject.WebApi.Controllers
             return _menuItemService.GetList();
         }
 
+     
         [HttpGet("{id}")]
         public MenuItem Get(int ID)
         {
@@ -37,9 +38,15 @@ namespace ShopProject.WebApi.Controllers
             _menuItemService.Add(menuItem);
         }
 
+       
+        public void Update(int menuID)
+        {
+            
+        }
+
         [HttpPut("{id}")]
         [Route("Update")]
-        public void Update(int id, [FromBody] MenuItem model)
+        public void Update([FromBody] MenuItem model)
         {
             _menuItemService.Update(model);
         }
@@ -51,8 +58,6 @@ namespace ShopProject.WebApi.Controllers
             _menuItemService.Remove(model);
         }
 
-        public class MenuItem
-        {
-        }
+       
     }
 }
